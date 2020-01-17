@@ -74,9 +74,8 @@ class BrainFuckV2 {
 
     async makeOutputFileWithData(file){
         const pathToFile = this.outputDir + file;
-        // const stringOfFile = await this.getFileData(file);
-        // const parsedResult = await this.compileJS(stringOfFile);
-        const parsedResult = 'some text';
+        const stringOfFile = await this.getFileData(file);
+        const parsedResult = await this.compileJS(stringOfFile);
         try {
             await this.fileExist(pathToFile);
             await this.deleteFile(pathToFile);
